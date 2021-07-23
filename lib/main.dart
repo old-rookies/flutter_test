@@ -7,6 +7,7 @@ import 'package:http/http.dart' as http;
 void main() => runApp(MyApp(title: "Test Demo"));
 
 class MyApp extends StatefulWidget {
+  // final 키워드는 값이 정해졌을 때 변경을 하지 못하게 한다.
   final String title;
   MyApp({Key? key, required this.title}) : super(key: key);
 
@@ -24,6 +25,7 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  // 라이프 서클 중 처음 로드 되었을 때 상태를 저장한다.
   @override
   void initState() {
     super.initState();
@@ -61,6 +63,7 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
+// 위젯을 가독성 + 테스트를 하기 위해서 분리 시켜준다.
 class AlbumFutureBuilder extends StatelessWidget {
   final Future<Album> futureAlbum;
   const AlbumFutureBuilder({Key? key, required this.futureAlbum})
@@ -78,7 +81,6 @@ class AlbumFutureBuilder extends StatelessWidget {
         } else {
           return CircularProgressIndicator();
         }
-        // By default, show a loading spinner.
       },
     );
   }
