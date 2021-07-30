@@ -43,6 +43,7 @@ class Album {
   int get userId => this._userId;
   int get id => this._id;
   String get title => this._title;
+
 // setter 섹션
   set userId(int _id) => this._userId = _id;
   set id(int _id) => this._id = _id;

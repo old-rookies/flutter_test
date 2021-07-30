@@ -51,11 +51,11 @@ void main() {
           ),
         );
         // 위젯 타입에 따라 검색하여서 로딩 인디케이터가 제대로 나오는지 확인합니다.
-        expect(find.byType(CircularProgressIndicator), findsOneWidget);
+        expect(find.byKey(Key("indicator")), findsOneWidget);
         // 다음 프레임으로 넘어갑니다.
         await tester.pump();
         // client에 의해서 값이 생성되고 로딩 인디케이터가 사라지고 mock이라는 text가 나오게 됩니다.
-        expect(find.byType(CircularProgressIndicator), findsNothing);
+        expect(find.byKey(Key("indicator")), findsNothing);
         expect(find.text("mock"), findsOneWidget);
       });
 

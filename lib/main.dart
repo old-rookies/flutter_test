@@ -47,7 +47,8 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              AlbumFutureBuilder(futureAlbum: futureAlbum),
+              AlbumFutureBuilder(
+                  futureAlbum: futureAlbum, key: Key("albumFutureBuilder")),
               Text("You have pushed the button this many times:"),
               Text('$_counter', style: Theme.of(context).textTheme.headline4),
             ],
@@ -79,7 +80,7 @@ class AlbumFutureBuilder extends StatelessWidget {
         } else if (snapshot.hasError) {
           return Text('${snapshot.error}');
         } else {
-          return CircularProgressIndicator();
+          return CircularProgressIndicator(key: Key("indicator"));
         }
       },
     );

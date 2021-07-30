@@ -48,6 +48,7 @@ void main() {
       expect(album.title, setTitle);
     });
   });
+
   // api 콜을 테스팅하는 방법
   group('fetchAlbum', () {
     test('Album 데이터 가져오기', () async {
